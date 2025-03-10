@@ -5,7 +5,8 @@ from langchain_core.output_parsers import StrOutputParser
 import streamlit as st
 import os
 from dotenv import load_dotenv
-
+# Load environment variables
+load_dotenv()
 # OpenAI
 os.environ['OPEN_API_KEY'] = os.getenv("OPEN_API_KEY")
 
@@ -14,7 +15,7 @@ os.environ['OPEN_API_KEY'] = os.getenv("OPEN_API_KEY")
 
 prompt = ChatPromptTemplate.from_messages(
     [
-        ('system', "you are a helpful assistant. Please response to the user queries.")
+        ('system', "you are a helpful assistant. Please response to the user queries."),
         ('user', "Question: {question}")
     ]
 )
